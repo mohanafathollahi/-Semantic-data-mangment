@@ -1,0 +1,188 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.sdm.com/Chair>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Person> .
+
+<http://www.sdm.com/DemoPaper>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/ConferencePaper> , <http://www.sdm.com/JournalPaper> .
+
+<http://www.sdm.com/HandleConference>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/Chair> ;
+        rdfs:range   <http://www.sdm.com/Conference> .
+
+<http://www.sdm.com/JournalPaper>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Paper> .
+
+<http://www.sdm.com/Paper>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/Person>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/Review>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/Workshop>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Conference> .
+
+<http://www.sdm.com/Writes>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/Author> ;
+        rdfs:range   <http://www.sdm.com/Paper> .
+
+<http://www.sdm.com/SubmittedToConference>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/ConferencePaper> ;
+        rdfs:range   <http://www.sdm.com/Conference> .
+
+<http://www.sdm.com/PosterPaper>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/ConferencePaper> .
+
+<http://www.sdm.com/Editor>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Person> .
+
+<http://www.sdm.com/PublishedInVolume>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/JournalPublication> ;
+        rdfs:range   <http://www.sdm.com/Volume> .
+
+<http://www.sdm.com/Topic>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/EditionOfConference>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/Proceedings> ;
+        rdfs:range   <http://www.sdm.com/Conference> .
+
+<http://www.sdm.com/Volume>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/Assigsdm>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/EventAssigsdm> ;
+        rdfs:range   <http://www.sdm.com/Reviewer> .
+
+<http://www.sdm.com/ExpertGroup>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Conference> .
+
+<http://www.sdm.com/Conference>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Venue> .
+
+<http://www.sdm.com/Author>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Person> .
+
+<http://www.sdm.com/HandleJournal>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/Editor> ;
+        rdfs:range   <http://www.sdm.com/Journal> .
+
+<http://www.sdm.com/PublishedInEdition>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/ConferencePublication> ;
+        rdfs:range   <http://www.sdm.com/Proceedings> .
+
+<http://www.sdm.com/AssignedTo>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/EventAssigsdm> ;
+        rdfs:range   <http://www.sdm.com/Paper> .
+
+<http://www.sdm.com/ConferencePublication>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/ConferencePaper> .
+
+<http://www.sdm.com/Rejects>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/EventReviews> ;
+        rdfs:range   <http://www.sdm.com/Paper> .
+
+<http://www.sdm.com/FullPaper>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/ConferencePaper> , <http://www.sdm.com/JournalPaper> .
+
+<http://www.sdm.com/RegularConference>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Conference> .
+
+<http://www.sdm.com/RelatedTo>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/Venue> , <http://www.sdm.com/Paper> ;
+        rdfs:range   <http://www.sdm.com/Topic> .
+
+<http://www.sdm.com/Reviewer>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Person> .
+
+<http://www.sdm.com/Reviews>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/EventReviews> ;
+        rdfs:range   <http://www.sdm.com/Reviewer> .
+
+<http://www.sdm.com/Venue>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/BelongsToJournal>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/Volume> ;
+        rdfs:range   <http://www.sdm.com/Journal> .
+
+<http://www.sdm.com/Journal>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Venue> .
+
+<http://www.sdm.com/Symposium>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Conference> .
+
+<http://www.sdm.com/Accepts>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/EventReviews> ;
+        rdfs:range   <http://www.sdm.com/ConferencePublication> , <http://www.sdm.com/JournalPublication> .
+
+<http://www.sdm.com/EventReviews>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/ShortPaper>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/ConferencePaper> , <http://www.sdm.com/JournalPaper> .
+
+<http://www.sdm.com/WritesReview>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/EventReviews> ;
+        rdfs:range   <http://www.sdm.com/Review> .
+
+<http://www.sdm.com/Proceedings>
+        rdf:type  rdfs:Class .
+
+<http://www.sdm.com/ConferencePaper>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/Paper> .
+
+<http://www.sdm.com/SubmittedToJournal>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/JournalPaper> ;
+        rdfs:range   <http://www.sdm.com/Journal> .
+
+<http://www.sdm.com/AssignedBy>
+        rdf:type     rdf:Property ;
+        rdfs:domain  <http://www.sdm.com/EventAssigsdm> ;
+        rdfs:range   <http://www.sdm.com/Editor> , <http://www.sdm.com/Chair> .
+
+<http://www.sdm.com/JournalPublication>
+        rdf:type         rdfs:Class ;
+        rdfs:subClassOf  <http://www.sdm.com/JournalPaper> .
+
+<http://www.sdm.com/EventAssigsdm>
+        rdf:type  rdfs:Class .
